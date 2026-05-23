@@ -128,6 +128,8 @@ void LaunchController::decideAccount()
 
 LaunchDecision LaunchController::decideLaunchMode()
 {
+    m_actualLaunchMode = LaunchMode::Offline;
+    return LaunchDecision::Continue;
     if (!m_accountToUse || m_wantedLaunchMode == LaunchMode::Demo) {
         m_actualLaunchMode = LaunchMode::Demo;
         return LaunchDecision::Continue;
